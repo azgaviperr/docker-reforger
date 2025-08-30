@@ -1,0 +1,32 @@
+---
+# Example: Multiple Servers with `.env` Files
+services:
+  arma-reforger-server1:
+    image: ghcr.io/acemod/arma-reforger:latest
+    platform: linux/amd64
+    container_name: arma-reforger-server1
+    ports:
+      - "2001:2001/udp"
+      - "17777:17777/udp"
+      - "19999:19999/udp"  # RCON
+    volumes:
+      - ./reforger/server1/configs:/reforger/Configs
+      - ./reforger/server1/profile:/home/profile
+      - ./reforger/workshop:/reforger/workshop
+    env_file:
+      - .env_server1
+
+  arma-reforger-server2:
+    image: ghcr.io/acemod/arma-reforger:latest
+    platform: linux/amd64
+    container_name: arma-reforger-server2
+    ports:
+      - "3001:2001/udp"
+      - "27777:17777/udp"
+      - "29999:19999/udp"  # RCON
+    volumes:
+      - ./reforger/server2/configs:/reforger/Configs
+      - ./reforger/server2/profile:/home/profile
+      - ./reforger/workshop:/reforger/workshop
+    env_file:
+      - .env_server2
