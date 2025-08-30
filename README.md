@@ -396,9 +396,33 @@ Ensure the Docker container is configured to download and install the server fil
   docker run -e SKIP_INSTALL=false your-image-name
   ```
 
-1. **Rebuild and Restart the Container**
+2. **Rebuild and Restart the Container**
 
 - **With Docker Compose:** Run `docker-compose up --build`. The `--build` flag ensures the image is rebuilt with the updated environment variable.
 - **With `docker run`:** Execute the updated `docker run` command. The container will start, and the installation script will download the `ArmaReforgerServer` binary and its dependencies.
 
----
+> **Note**: If you use `docker-compose down` instead of `docker-compose stop`, the volume containing the installed files will be deleted. This means the server files will need to be reinstalled the next time the container is started. To avoid this, you can map a persistent volume for the installation files.
+
+3. **Map a Persistent Volume for Installation Files**
+
+To ensure the installation files persist even after running `docker-compose down`, map a volume for the installation directory. For example:
+
+- **In a Docker Compose file:**
+
+  ```yaml
+  services:
+    arma-reforger-server:
+      image: your-image-name
+      volumes:
+        - /path/to/persistent/install:/reforger
+      environment:
+        - SKIP_INSTALL=false
+  ```
+
+- **Using `docker run`:**
+
+  ```bash
+  docker run -v /path/to/persistent/install:/path/to/install -e SKIP_INSTALL=false your-image-name
+  ```
+
+By mapping a persistent volume, the installation files will remain intact, and the server will not need to reinstall them after a `docker-compose down` or container removal.
