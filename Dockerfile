@@ -10,9 +10,9 @@ RUN apt-get update \
         ca-certificates \
         lib32gcc-s1 \
         lib32stdc++6 \
+        libterm-readline-perl-perl \
         libcurl4 \
         libssl3 \
-        libterm-readline-perl-perl \
         net-tools \
         python3 \
         wamerican \
