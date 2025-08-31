@@ -15,3 +15,4 @@ services:
     environment:
       - SERVER_PUBLIC_ADDRESS=public-ip
       - GAME_NAME=My Docker Reforger Server
+      - RCON_PASSWORD=ChangeItOrElse!

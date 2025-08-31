@@ -1,7 +1,7 @@
 # Example Environment Variables for Arma Reforger Server
 
 # Server Configuration
-ARMA_CONFIG=docker_generated.json
+#ARMA_CONFIG=static_config.json
 SERVER_BIND_ADDRESS=0.0.0.0
 SERVER_BIND_PORT=2001
 SERVER_PUBLIC_ADDRESS=your.public.ip
@@ -19,7 +19,7 @@ RCON_PERMISSION=admin
 GAME_NAME=My Custom Reforger Server
 GAME_PASSWORD=
 GAME_PASSWORD_ADMIN=
-GAME_ADMINS=8535471d-9015-49c5-894e-685ce05e36e4
+GAME_ADMINS=["12345678-90ab-cdef-1234-567890abcdef","12585678-90ab-cdef-1234-567890abcdfg"]
 GAME_SCENARIO_ID={ECC61978EDCC2B5A}Missions/23_Campaign.conf
 GAME_MAX_PLAYERS=32
 GAME_VISIBLE=true

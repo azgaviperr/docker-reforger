@@ -5,6 +5,7 @@ services:
     image: ghcr.io/acemod/arma-reforger:latest
     platform: linux/amd64
     container_name: arma-reforger
+    restart: unless-stopped
     ports:
       - "2001:2001/udp"
       - "17777:17777/udp"
@@ -17,4 +18,4 @@ services:
       - ARMA_CONFIG=docker_generated.json
       - SERVER_PUBLIC_ADDRESS=your.public.ip
       - GAME_NAME=My Custom Server
-      - RCON_PASSWORD=YourSecurePassword
+      - RCON_PASSWORD=ChangeItOrElse!
