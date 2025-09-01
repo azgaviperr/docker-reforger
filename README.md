@@ -36,7 +36,7 @@ docker start reforger-server
 4. Stop the server:
 
    ```bash
-   docker-compose down
+   docker compose down
    ```
 
 ## Learn More
