@@ -46,7 +46,7 @@ This guide will walk you through deploying the Arma Reforger dedicated server us
 2. Start the server:
 
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
 See the [Configuration Documentation](../configuration-guide/index.md) for available environment variables.
