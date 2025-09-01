@@ -32,7 +32,7 @@ This guide will walk you through deploying the Arma Reforger dedicated server us
 1. Create a `docker-compose.yml` file:
 
     ```yaml
-    version: "3.9"
+    ---
     services:
       arma-reforger:
         image: ghcr.io/acemod/arma-reforger:latest
