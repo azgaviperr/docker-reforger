@@ -30,7 +30,7 @@ docker start reforger-server
 3. Start the server:
 
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 4. Stop the server:
