@@ -159,7 +159,7 @@ Each server instance uses its own configuration, profile, and workshop directori
 - **Separate Compose Files**: Alternatively, you can create multiple `docker-compose.yml` files for each server instance. This allows you to run and manage each instance independently. For example:
 
 ```bash
-docker-compose -f docker-compose-server1.yml up -d
+docker compose -f docker-compose-server1.yml up -d
 docker-compose -f docker-compose-server2.yml up -d
 ```
 
