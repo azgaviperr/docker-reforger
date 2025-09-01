@@ -283,19 +283,12 @@ This approach provides greater flexibility and organization for managing mods in
 ## Additional Server Parameters
 
 You can pass additional parameters to the server binary using the `ARMA_PARAMS` environment variable. This is useful for parameters that do not have specific environment variables assigned. For example:
+For detailed information on all available server configuration options, refer to the [official Arma Reforger Server Config documentation](https://community.bistudio.com/wiki/Arma_Reforger:Server_Config).
 
 ```yaml
 environment:
-    - ARMA_PARAMS=-someCustomFlag -anotherFlag
+    - ARMA_PARAMS=-lobbyPlayerSynchronise=true -disableNavmeshStreaming=['Soldiers', 'BTRlike']
 ```
-
----
-
-## Workshop and Install Folder Sharing
-
-To save disk space and reduce download times, you can share the same workshop folder between multiple server instances by mounting the same host directory to `/reforger/workshop` for each service. Note that some mods may not support concurrent access.
-
-Similarly, you can share the install folder between server instances by mounting the same host directory to `/reforger/Install`. This approach avoids redundant downloads of the game files and reduces storage usage. However, ensure that all server instances use the same game version to prevent compatibility issues. This means that server updates must be performed simultaneously for all instances to maintain consistency and avoid potential errors.
 
 ---
 
@@ -304,5 +297,3 @@ Similarly, you can share the install folder between server instances by mounting
 - Always use persistent volumes for `/reforger/Configs`, `/home/profile`, and `/reforger/workshop` to prevent data loss.
 - Use strong passwords for admin and RCON access.
 - Regularly back up your configuration and profile data.
-
-> **Warning**: Be cautious about who you grant access to your Docker host and server ports. Ensuring a minimum level of security awareness is essential to protect your environment from unauthorized access or malicious activity.
