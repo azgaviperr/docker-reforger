@@ -160,7 +160,7 @@ Each server instance uses its own configuration, profile, and workshop directori
 
 ```bash
 docker compose -f docker-compose-server1.yml up -d
-docker-compose -f docker-compose-server2.yml up -d
+docker compose -f docker-compose-server2.yml up -d
 ```
 
 This approach provides flexibility and simplifies troubleshooting by isolating the configuration of each instance.
