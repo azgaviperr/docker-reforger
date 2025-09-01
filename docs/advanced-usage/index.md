@@ -119,7 +119,7 @@ You can host multiple Arma Reforger servers on the same machine by creating sepa
 ### Example: Docker Compose for Two Servers
 
 ```yaml
-version: "3.8"
+---
 services:
     arma-reforger-1:
         image: ghcr.io/acemod/arma-reforger:latest
