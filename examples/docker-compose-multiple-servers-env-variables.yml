@@ -7,9 +7,9 @@ services:
     container_name: arma-reforger-server1
     restart: unless-stopped
     ports:
-      - "2001:2001/udp"
-      - "17777:17777/udp"
-      - "19999:19999/udp"  # RCON
+      - 2001:2001/udp
+      - 17777:17777/udp
+      - 19999:19999/udp  # RCON
     volumes:
       - ./reforger/server1/configs:/reforger/Configs
       - ./reforger/server1/profile:/home/profile
@@ -27,9 +27,9 @@ services:
     container_name: arma-reforger-server2
     restart: unless-stopped
     ports:
-      - "3001:2001/udp"
-      - "27777:17777/udp"
-      - "29999:19999/udp"  # RCON
+      - 3001:2001/udp
+      - 27777:17777/udp
+      - 29999:19999/udp  # RCON
     volumes:
       - ./reforger/server2/configs:/reforger/Configs
       - ./reforger/server2/profile:/home/profile
